@@ -9,7 +9,7 @@ const Hero3 = () => {
 			<Heading2>KIM CƯƠNG</Heading2>
 			<div className="py-10 flex items-center gap-5">
 				{new Array(2).fill(0).map((item, index) => (
-					<Card key={index} color="text-red-500" />
+					<Card key={index} color="#ffffff" />
 				))}
 			</div>
 		</div>

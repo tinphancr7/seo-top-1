@@ -58,4 +58,5 @@ const IconHeader2 = () => {
 		</svg>
 	);
 };
+const BgDiamond = () => {};
 export {IconHeader, IconHeader1, IconHeader2};

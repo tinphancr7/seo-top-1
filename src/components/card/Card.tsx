@@ -1,7 +1,10 @@
+"use client";
 import Image from "next/image";
-import React from "react";
+import React, {useRef} from "react";
 
 const Card = ({color}: {color: string}) => {
+	const ref = useRef(null);
+	console.log(ref.current.style);
 	return (
 		<div className="w-[335px] h-[476px] relative flex-shrink-0">
 			<svg
@@ -23,9 +26,10 @@ const Card = ({color}: {color: string}) => {
 						x2="164.105"
 						y2="0.0453115"
 						gradientUnits="userSpaceOnUse"
+						className="has-[stop]:text-red-500"
 					>
 						<stop stop-color="#2D398F" stop-opacity="0" />
-						<stop offset="0.498322" stop-color="#9D6DCD" />
+						<stop ref={ref} offset="0.498322" stopColor={"red"} />
 						<stop offset="1" stop-color="#2D398F" stop-opacity="0" />
 					</linearGradient>
 				</defs>
