@@ -1,63 +1,85 @@
 "use client";
+import {ranksLogo} from "@/constants";
 import Image from "next/image";
-import React, {useRef} from "react";
 
-const Card = ({color}: {color: string}) => {
-	const ref = useRef(null);
-	console.log(ref.current.style);
+const Card = ({dataOrder, orderActive, name}: any) => {
+	const rankLogo = ranksLogo.find((item) => item.name === name);
+
 	return (
-		<div className="w-[335px] h-[476px] relative flex-shrink-0">
-			<svg
-				xmlns="http://www.w3.org/2000/svg"
-				width="100%"
-				height="100%"
-				viewBox="0 0 335 476"
-				fill="none"
-			>
-				<path
-					d="M334.5 0L48.5 0L0.5 476H286.5L334.5 0Z"
-					fill="url(#paint0_linear_884_1074)"
-				/>
-				<defs>
-					<linearGradient
-						id="paint0_linear_884_1074"
-						x1="170.5"
-						y1="479.65"
-						x2="164.105"
-						y2="0.0453115"
-						gradientUnits="userSpaceOnUse"
-						className="has-[stop]:text-red-500"
-					>
-						<stop stop-color="#2D398F" stop-opacity="0" />
-						<stop ref={ref} offset="0.498322" stopColor={"red"} />
-						<stop offset="1" stop-color="#2D398F" stop-opacity="0" />
-					</linearGradient>
-				</defs>
-			</svg>
-
-			<div className=" absolute top-[50%] -translate-y-[50%] left-[50%] -translate-x-[50%] ">
-				<div className="w-[200px] h-[226px] flex-shrink-0 relative ">
+		<div
+			className={`w-full h-[476px] relative flex-shrink-0 carousel-item ${
+				name === "master"
+					? "example_wrapper"
+					: name === "seo"
+					? ""
+					: "example_wrapper2"
+			}   `}
+			data-order={dataOrder}
+			style={{
+				backgroundImage:
+					name === "seo"
+						? "linear-gradient(1deg, rgba(45, 57, 143, 0.00) -0.3%, #9D6DCD 49.45%, rgba(45, 57, 143, 0.00) 99.54%)"
+						: "linear-gradient(1deg, rgba(45, 57, 143, 0.00) -0.3%, rgba(45, 57, 143, 0.35) 49.45%, rgba(45, 57, 143, 0.00) 99.54%)",
+			}}
+		>
+			<div className=" absolute top-[50%] -translate-y-[50%] left-[50%] -translate-x-[50%] z-[9999] flex flex-col items-center justify-center skew-x-[10deg]">
+				<div
+					className={` flex-shrink-0 relative animate-image `}
+					style={{
+						width:
+							orderActive?.toString() === dataOrder?.toString()
+								? ranksLogo[0].width
+								: rankLogo?.width,
+						height:
+							orderActive?.toString() === dataOrder?.toString()
+								? ranksLogo[0].height
+								: rankLogo?.height,
+					}}
+				>
 					<Image
-						src={"/images/frame.png"}
+						src={`/images/${
+							orderActive?.toString() === dataOrder?.toString() &&
+							name === "master"
+								? ranksLogo[0].url
+								: rankLogo?.url
+						}`}
 						fill
-						className="object-cover"
+						className="object-cover "
 						alt=""
 					/>
-					<div className="absolute top-[50%] left-[50%] w-[88px] h-[88px] rounded-full -translate-x-[50%] -translate-y-[50%] z-[-1]">
+					<div
+						className="absolute  left-[50%]  rounded-full -translate-x-[50%]  z-[-1]"
+						style={{
+							width: rankLogo?.widthImg,
+							height: rankLogo?.heightImg,
+							top:
+								orderActive?.toString() === dataOrder?.toString()
+									? ranksLogo[0].top
+									: rankLogo?.top,
+						}}
+					>
 						<Image
 							src={
-								"https://images.unsplash.com/photo-1707058855897-9c03822150d7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw2Mnx8fGVufDB8fHx8fA%3D%3D"
+								"https://images.unsplash.com/photo-1709071784840-cf3ecc434749?q=80&w=1936&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
 							}
 							fill
 							className="object-cover rounded-full"
 							alt=""
 						/>
 					</div>
-					<span className="absolute inline-block bottom-[60px] left-[50%] -translate-x-[50%] font-bold text-base text-purple55 uppercase">
+					<span
+						className="absolute inline-block  left-[50%] -translate-x-[50%] font-bold text-base text-white uppercase"
+						style={{
+							bottom:
+								orderActive?.toString() === dataOrder?.toString()
+									? ranksLogo[0].bottom
+									: rankLogo?.bottom,
+						}}
+					>
 						Boss
 					</span>
 				</div>
-				<div className="text-white font-extrabold text-center text-3xl">
+				<div className="text-white font-extrabold text-center text-3xl text-nowrap">
 					MR. LINDA
 				</div>
 			</div>

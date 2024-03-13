@@ -66,7 +66,7 @@ body {
 		text-shadow: 0 0.02em #fff, 0.02em 0 #fff, -0.02em 0 #fff, 0 -0.02em #fff;
 	}
 }
-.card {
+/* .card {
 	background: linear-gradient(
 		1deg,
 		rgba(45, 57, 143, 0) -0.3%,
@@ -74,4 +74,72 @@ body {
 		rgba(45, 57, 143, 0) 99.54%
 	);
 	transform: skew(-15deg);
+} */
+
+.example_wrapper {
+	transition: 0.5s transform ease-out;
+	transform-origin: center;
+	transform: skewX(-10deg) translateZ(0);
+	&:hover {
+		transform-origin: center;
+		transform: skewX(-10deg) scale(1.1) translateZ(0);
+	}
+	&:hover .animate-image {
+		animation: fadeIn 0.8s ease-in-out;
+	}
+}
+.example_wrapper2 {
+	transition: 0.5s transform ease-out;
+	transform-origin: center;
+	transform: skewX(-10deg) translateZ(0);
+	&:hover {
+		transform-origin: center;
+		transform: skewX(-10deg) scale(1.1) translateZ(0);
+	}
+	&:hover .animate-image {
+		animation: fadeIn 0.8s ease-in-out;
+	}
+}
+
+.shiftUp {
+	transform: skewX(-10deg) translateZ(0) translate3d(-20px, 0, 0);
+}
+
+.shiftDown {
+	transform: skewX(-10deg) translateZ(0) translate3d(20px, 0, 0);
+}
+
+.example_wrapper:after,
+.example_wrapper2:after {
+	content: "";
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	background-image: linear-gradient(
+		1deg,
+		rgba(38, 171, 227, 0) -0.3%,
+		rgba(38, 171, 227, 0.5) 49.45%,
+		rgba(45, 57, 143, 0) 99.54%,
+		rgba(38, 171, 227, 0) 99.54%
+	);
+	opacity: 0;
+	transition: all 0.5s ease-in-out;
+}
+
+.example_wrapper:hover:after,
+.example_wrapper2:hover:after {
+	opacity: 1;
+}
+
+@keyframes fadeIn {
+	0% {
+		opacity: 0;
+		transform: scale(0.6);
+	}
+	100% {
+		opacity: 1;
+		transform: scale(1);
+	}
 }
