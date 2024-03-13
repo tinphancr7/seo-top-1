@@ -1,35 +1,77 @@
 import Image from "next/image";
-import React from "react";
+import React, {useState} from "react";
 
-const Card = ({color}: {color: string}) => {
+const Card = ({dataOrder}) => {
+	const [active, setActive] = useState(false);
+	console.log("active", active);
 	return (
-		<div className="w-[335px] h-[476px] relative flex-shrink-0">
-			<svg
-				xmlns="http://www.w3.org/2000/svg"
-				width="100%"
-				height="100%"
-				viewBox="0 0 335 476"
-				fill="none"
-			>
-				<path
-					d="M334.5 0L48.5 0L0.5 476H286.5L334.5 0Z"
-					fill="url(#paint0_linear_884_1074)"
-				/>
-				<defs>
-					<linearGradient
-						id="paint0_linear_884_1074"
-						x1="170.5"
-						y1="479.65"
-						x2="164.105"
-						y2="0.0453115"
-						gradientUnits="userSpaceOnUse"
-					>
-						<stop stop-color="#2D398F" stop-opacity="0" />
-						<stop offset="0.498322" stop-color="#9D6DCD" />
-						<stop offset="1" stop-color="#2D398F" stop-opacity="0" />
-					</linearGradient>
-				</defs>
-			</svg>
+		<div
+			onMouseMove={() => {
+				setActive(true);
+			}}
+			onMouseLeave={() => {
+				setActive(false);
+			}}
+			className={`w-[335px] h-[476px] relative flex-shrink-0 carousel-item example_wrapper  transition-all duration-500 ease-in-out ${
+				active ? "bg-red-500" : "bg-blue-500"
+			}`}
+			data-order={dataOrder}
+		>
+			{/* {active ? (
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					width="100%"
+					height="100%"
+					viewBox="0 0 335 476"
+					fill="none"
+				>
+					<path
+						d="M334.5 0L48.5 0L0.5 476H286.5L334.5 0Z"
+						fill="url(#paint0_linear_884_1074)"
+					/>
+					<defs>
+						<linearGradient
+							id="paint0_linear_884_1074"
+							x1="170.5"
+							y1="479.65"
+							x2="164.105"
+							y2="0.0453115"
+							gradientUnits="userSpaceOnUse"
+						>
+							<stop stop-color="#2D398F" stop-opacity="0" />
+							<stop offset="0.498322" stop-color={"#2D398F"} />
+							<stop offset="1" stop-color="#2D398F" stop-opacity="0" />
+						</linearGradient>
+					</defs>
+				</svg>
+			) : (
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					width="100%"
+					height="100%"
+					viewBox="0 0 335 476"
+					fill="none"
+				>
+					<path
+						d="M334.5 0L48.5 0L0.5 476H286.5L334.5 0Z"
+						fill="url(#paint0_linear_884_1074)"
+					/>
+					<defs>
+						<linearGradient
+							id="paint0_linear_884_1074"
+							x1="170.5"
+							y1="479.65"
+							x2="164.105"
+							y2="0.0453115"
+							gradientUnits="userSpaceOnUse"
+						>
+							<stop stop-color="#2D398F" stop-opacity="0" />
+							<stop offset="0.498322" stop-color={"#9D6DCD"} />
+							<stop offset="1" stop-color="#2D398F" stop-opacity="0" />
+						</linearGradient>
+					</defs>
+				</svg>
+			)} */}
 
 			<div className=" absolute top-[50%] -translate-y-[50%] left-[50%] -translate-x-[50%] ">
 				<div className="w-[200px] h-[226px] flex-shrink-0 relative ">
