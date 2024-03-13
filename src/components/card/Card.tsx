@@ -7,7 +7,7 @@ const Card = ({dataOrder, orderActive, name}: any) => {
 
 	return (
 		<div
-			className={`w-full h-[476px] relative flex-shrink-0 carousel-item ${
+			className={`w-full h-[476px] relative flex-shrink-0 carousel-item  ${
 				name === "master"
 					? "example_wrapper"
 					: name === "seo"
@@ -22,6 +22,20 @@ const Card = ({dataOrder, orderActive, name}: any) => {
 						: "linear-gradient(1deg, rgba(45, 57, 143, 0.00) -0.3%, rgba(45, 57, 143, 0.35) 49.45%, rgba(45, 57, 143, 0.00) 99.54%)",
 			}}
 		>
+			<div
+				className="w-1 h-full absolute top-0 left-0"
+				style={{
+					backgroundImage:
+						"linear-gradient(0deg, rgba(61, 72, 153, 0) 20%, #6679FF 50%,rgba(61, 72, 153, 0) 80%)",
+				}}
+			></div>
+			<div
+				className="w-1 h-full absolute top-0 right-0"
+				style={{
+					backgroundImage:
+						"linear-gradient(0deg, rgba(61, 72, 153, 0) 20%, #6679FF 50%,rgba(61, 72, 153, 0) 80%)",
+				}}
+			></div>
 			<div className=" absolute top-[50%] -translate-y-[50%] left-[50%] -translate-x-[50%] z-[9999] flex flex-col items-center justify-center skew-x-[10deg]">
 				<div
 					className={` flex-shrink-0 relative animate-image `}

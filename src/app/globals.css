@@ -143,3 +143,16 @@ body {
 		transform: scale(1);
 	}
 }
+
+.module {
+	max-width: 250px;
+	padding: 1rem;
+	color: white;
+	border-width: 3px;
+	border-style: solid;
+	border-image: linear-gradient(
+		-84.24deg,
+		#6679ff 50.462700000000005%,
+		rgba(61, 72, 153, 0) 100%
+	);
+}

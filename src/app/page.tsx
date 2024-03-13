@@ -9,9 +9,6 @@ import {useEffect, useState} from "react";
 export default function Home() {
 	return (
 		<main className=" w-full  ">
-			{/* <Hero />
-			<Hero2 />
-			<Hero3 /> */}
 			<div className="container mx-auto">
 				<ListRank title="cao thủ tháng 03/20024" name="master" order={1} />
 				<Hero />
@@ -37,17 +34,16 @@ export default function Home() {
 					textColor={"#FFCB44"}
 				/>
 			</div>
-
-			{/* <div className="flex items-center justify-between">
-				
-				<div className="FeatureRow"></div>
-				<Card dataOrder="1" orderActive={orderActive} name="master" />
-				<Card dataOrder="2" orderActive={orderActive} name="seo" />
-				<Card dataOrder="3" orderActive={orderActive} name="diamond" />
-				<Card dataOrder="4" orderActive={orderActive} name="platinum" />
-				<Card dataOrder="5" orderActive={orderActive} name="gold" />
-				<Card dataOrder="6" orderActive={orderActive} name="master" />
-			</div> */}
+			{/* <div
+				className="w-[500px] h-2 "
+				// style={{
+				// 	backgroundImage: "linear-gradient(90deg, blue 10%,yellow 70%)",
+				// }}
+				style={{
+					backgroundImage:
+						"linear-gradient(90deg, rgba(102, 121, 255, 0.00) 10%, #70B8E6 50.09%, rgba(102, 121, 255, 0.00) 90.09%)",
+				}}
+			></div> */}
 		</main>
 	);
 }
