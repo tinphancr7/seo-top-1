@@ -49,7 +49,7 @@ const ranksLogo = [
 		widthImg: "84px",
 		heightImg: "84px",
 		top: "22%",
-		bottom: "63px",
+		bottom: "62px",
 	},
 	{
 		name: "seo",
@@ -89,7 +89,7 @@ const ranksLogo = [
 		widthImg: "80px",
 		heightImg: "80px",
 		top: "17%",
-		bottom: "30px",
+		bottom: "16px",
 	},
 	{
 		name: "bronze",
@@ -102,4 +102,18 @@ const ranksLogo = [
 		bottom: "18px",
 	},
 ];
-export {listMenuHeader, ranksLogo};
+const listPartners = [
+	{name: "okvip", url: "okvip.png", width: "200px", height: "96px"},
+	{name: "789bet", url: "789bet.png", width: "200px", height: "96px"},
+	{name: "mb66", url: "mb66.png", width: "200px", height: "96px"},
+	{name: "new88", url: "new88.png", width: "200px", height: "96px"},
+	{name: "jun88", url: "jun88.png", width: "200px", height: "96px"},
+	{name: "hi88", url: "hi88.png", width: "200px", height: "96px"},
+	{name: "okvip", url: "okvip.png", width: "200px", height: "96px"},
+	{name: "789bet", url: "789bet.png", width: "200px", height: "96px"},
+	{name: "mb66", url: "mb66.png", width: "200px", height: "96px"},
+	{name: "new88", url: "new88.png", width: "200px", height: "96px"},
+	{name: "jun88", url: "jun88.png", width: "200px", height: "96px"},
+	{name: "hi88", url: "hi88.png", width: "200px", height: "96px"},
+];
+export {listMenuHeader, ranksLogo, listPartners};

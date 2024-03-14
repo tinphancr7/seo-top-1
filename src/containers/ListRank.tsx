@@ -1,9 +1,8 @@
 import Card from "@/components/card/Card";
-import Heading from "@/components/heading/Heading";
-import Heading2 from "@/components/heading/Heading2";
+
 import React, {Fragment, useEffect, useState} from "react";
 
-const ListRank = ({title, name, order, bg, textColor}) => {
+const ListRank = ({name, order}) => {
 	const [orderActive, setOrderActive] = useState(0);
 	useEffect(() => {
 		if (name === "master") {
@@ -56,25 +55,16 @@ const ListRank = ({title, name, order, bg, textColor}) => {
 	}, [name]); // Empty dependency array ensures the effect runs only once on mount
 
 	return (
-		<div className="my-[100px]">
-			{name === "master" ? (
-				<Heading>{title}</Heading>
-			) : (
-				<Heading2 bg={bg} textColor={textColor}>
-					{title}
-				</Heading2>
-			)}
-			<div className="py-10 grid grid-cols-5 gap-5">
-				{new Array(5).fill(0).map((item, index) => (
-					<Fragment key={index}>
-						<Card
-							dataOrder={index + order}
-							name={name}
-							orderActive={orderActive}
-						/>
-					</Fragment>
-				))}
-			</div>
+		<div className="grid grid-cols-5 gap-5">
+			{new Array(5).fill(0).map((item, index) => (
+				<Fragment key={index}>
+					<Card
+						dataOrder={index + order}
+						name={name}
+						orderActive={orderActive}
+					/>
+				</Fragment>
+			))}
 		</div>
 	);
 };

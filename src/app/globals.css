@@ -66,20 +66,11 @@ body {
 		text-shadow: 0 0.02em #fff, 0.02em 0 #fff, -0.02em 0 #fff, 0 -0.02em #fff;
 	}
 }
-/* .card {
-	background: linear-gradient(
-		1deg,
-		rgba(45, 57, 143, 0) -0.3%,
-		#9d6dcd 49.45%,
-		rgba(45, 57, 143, 0) 99.54%
-	);
-	transform: skew(-15deg);
-} */
 
 .example_wrapper {
 	transition: 0.5s transform ease-out;
 	transform-origin: center;
-	transform: skewX(-10deg) translateZ(0);
+	/* transform: skewX(-10deg) translateZ(0); */
 	&:hover {
 		transform-origin: center;
 		transform: skewX(-10deg) scale(1.1) translateZ(0);
@@ -91,10 +82,10 @@ body {
 .example_wrapper2 {
 	transition: 0.5s transform ease-out;
 	transform-origin: center;
-	transform: skewX(-10deg) translateZ(0);
+	/* transform: skewX(-10deg) translateZ(0); */
 	&:hover {
 		transform-origin: center;
-		transform: skewX(-10deg) scale(1.1) translateZ(0);
+		/* transform: skewX(-10deg) translateZ(0); */
 	}
 	&:hover .animate-image {
 		animation: fadeIn 0.8s ease-in-out;
@@ -155,4 +146,61 @@ body {
 		#6679ff 50.462700000000005%,
 		rgba(61, 72, 153, 0) 100%
 	);
+}
+/* .Container {
+	max-width: 70%;
+	margin-right: auto;
+	margin-left: auto;
+	background: blue;
+	padding-top: 20px;
+	padding-bottom: 20px;
+} */
+
+.Flex-item {
+	flex: 1 1 auto;
+}
+
+.Flex-item + .Flex-item {
+	border-left: solid 1px white;
+}
+
+/** Optional for OPs exact layout */
+
+.Flex-item:first-child {
+	text-align: left;
+}
+
+.Flex-item:last-child {
+	text-align: right;
+}
+.show_bg_2 {
+	background: url("/images/image824.png") lightgray 50% / cover no-repeat;
+	width: 100%;
+	height: auto;
+	background-size: cover;
+	color: white;
+	padding: 20px;
+	position: relative;
+	/* filter: opacity(0.5); */
+}
+.show_bg_2::before {
+	content: "";
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-image: linear-gradient(
+		to bottom,
+		rgba(9, 12, 29, 1),
+		rgba(0, 3, 26, 0.8),
+		rgba(0, 3, 27, 1)
+	);
+	/* background-image: linear-gradient(
+		to bottom,
+		rgba(9, 12, 29, 1),
+		transparent,
+		rgba(9, 12, 29, 1)
+	); */
+
+	position: absolute;
 }

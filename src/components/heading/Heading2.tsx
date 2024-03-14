@@ -1,8 +1,13 @@
 import React from "react";
-
-const Heading2 = ({children, bg, textColor}) => {
+interface Heading2Props {
+	children: React.ReactNode;
+	bg: string;
+	textColor: string;
+	className?: string;
+}
+const Heading2 = ({children, bg, textColor, className}: Heading2Props) => {
 	return (
-		<div className="flex items-center justify-center gap-5">
+		<div className={`flex items-center justify-center gap-5 mb-6 ${className}`}>
 			<div
 				className="w-[482px] h-4"
 				style={{

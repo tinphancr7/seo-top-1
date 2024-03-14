@@ -1,3 +1,4 @@
+import {nextui} from "@nextui-org/react";
 import type {Config} from "tailwindcss";
 
 const config: Config = {
@@ -6,6 +7,7 @@ const config: Config = {
 		"./src/components/**/*.{js,ts,jsx,tsx,mdx}",
 		"./src/app/**/*.{js,ts,jsx,tsx,mdx}",
 		"./src/containers/**/*.{js,ts,jsx,tsx,mdx}",
+		"./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}",
 	],
 	theme: {
 		extend: {
@@ -19,6 +21,8 @@ const config: Config = {
 				blue08: "#080c20",
 				blue00: "#00031A",
 				blueAB: "#ABDBFF",
+				blue19: "#19205A",
+
 				purple55: "#5520D0",
 				diamond: "#2D398F",
 			},
@@ -31,6 +35,6 @@ const config: Config = {
 			"2xl": "1600px",
 		},
 	},
-	plugins: [],
+	plugins: [nextui()],
 };
 export default config;

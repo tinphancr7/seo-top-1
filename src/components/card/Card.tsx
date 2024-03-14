@@ -4,10 +4,11 @@ import Image from "next/image";
 
 const Card = ({dataOrder, orderActive, name}: any) => {
 	const rankLogo = ranksLogo.find((item) => item.name === name);
+	console.log("Card", rankLogo);
 
 	return (
 		<div
-			className={`w-full h-[476px] relative flex-shrink-0 carousel-item  ${
+			className={`w-full h-[476px] relative flex-shrink-0 carousel-item skew-x-[-10deg] ${
 				name === "master"
 					? "example_wrapper"
 					: name === "seo"
@@ -18,22 +19,26 @@ const Card = ({dataOrder, orderActive, name}: any) => {
 			style={{
 				backgroundImage:
 					name === "seo"
-						? "linear-gradient(1deg, rgba(45, 57, 143, 0.00) -0.3%, #9D6DCD 49.45%, rgba(45, 57, 143, 0.00) 99.54%)"
+						? "linear-gradient(1deg, rgba(11, 14, 34, 0.5) 0%, rgba(45, 57, 143, 0.4) 14%, rgb(152, 106, 200) 50%, rgba(45, 57, 143, 0.35) 90%, rgba(11, 14, 34, 0.2) 99%)"
 						: "linear-gradient(1deg, rgba(45, 57, 143, 0.00) -0.3%, rgba(45, 57, 143, 0.35) 49.45%, rgba(45, 57, 143, 0.00) 99.54%)",
 			}}
 		>
 			<div
-				className="w-1 h-full absolute top-0 left-0"
+				className="w-[3px] h-full absolute top-0 left-0"
 				style={{
 					backgroundImage:
-						"linear-gradient(0deg, rgba(61, 72, 153, 0) 20%, #6679FF 50%,rgba(61, 72, 153, 0) 80%)",
+						name === "seo"
+							? "linear-gradient(1deg,  rgba(61, 72, 153, 0) 20%, #FAF5FF 50%,rgba(61, 72, 153, 0) 80%)"
+							: "linear-gradient(0deg, rgba(61, 72, 153, 0) 20%, #6679FF 50%,rgba(61, 72, 153, 0) 80%)",
 				}}
 			></div>
 			<div
-				className="w-1 h-full absolute top-0 right-0"
+				className="w-[3px] h-full absolute top-0 right-0"
 				style={{
 					backgroundImage:
-						"linear-gradient(0deg, rgba(61, 72, 153, 0) 20%, #6679FF 50%,rgba(61, 72, 153, 0) 80%)",
+						name === "seo"
+							? "linear-gradient(1deg,  rgba(61, 72, 153, 0) 20%, #FAF5FF 50%,rgba(61, 72, 153, 0) 80%)"
+							: "linear-gradient(0deg, rgba(61, 72, 153, 0) 20%, #6679FF 50%,rgba(61, 72, 153, 0) 80%)",
 				}}
 			></div>
 			<div className=" absolute top-[50%] -translate-y-[50%] left-[50%] -translate-x-[50%] z-[9999] flex flex-col items-center justify-center skew-x-[10deg]">
@@ -74,7 +79,7 @@ const Card = ({dataOrder, orderActive, name}: any) => {
 					>
 						<Image
 							src={
-								"https://images.unsplash.com/photo-1709071784840-cf3ecc434749?q=80&w=1936&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+								"https://images.unsplash.com/photo-1608178398319-48f814d0750c?q=80&w=2079&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
 							}
 							fill
 							className="object-cover rounded-full"

@@ -1,9 +1,12 @@
 import Image from "next/image";
 import React from "react";
 
-const Heading = ({children}) => {
+interface HeadingProps {
+	children: React.ReactNode;
+}
+const Heading = ({children}: HeadingProps) => {
 	return (
-		<div className="flex items-center justify-center relative">
+		<div className="flex items-center justify-center relative mb-6">
 			<div className="relative h-24 w-[1428px]">
 				<Image
 					src={"/images/Group 141.png"}
