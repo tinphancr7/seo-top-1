@@ -1,3 +1,5 @@
+import {RankLogo} from "@/interfaces";
+
 const listMenuHeader = [
 	{
 		id: 1,
@@ -30,8 +32,9 @@ const listMenuHeader = [
 		path: "/blog",
 	},
 ];
-const ranksLogo = [
-	{
+
+const rankLogo: RankLogo = {
+	highlight: {
 		name: "highlight",
 		url: "highlight.png",
 		width: "182px",
@@ -41,17 +44,17 @@ const ranksLogo = [
 		top: "22%",
 		bottom: "63px",
 	},
-	{
+	master: {
 		name: "master",
 		url: "master.png",
-		width: "182px",
-		height: "206px",
-		widthImg: "84px",
-		heightImg: "84px",
+		width: "w-[80px] lg:w-[182px]",
+		height: "h-[90px] lg:h-[206px]",
+		widthImg: "w-9 lg:w-[84px]",
+		heightImg: "h-9 lg:h-[84px] ",
 		top: "22%",
 		bottom: "62px",
 	},
-	{
+	seo: {
 		name: "seo",
 		url: "seo.png",
 		width: "200px",
@@ -61,7 +64,7 @@ const ranksLogo = [
 		top: "30%",
 		bottom: "60px",
 	},
-	{
+	diamond: {
 		name: "diamond",
 		url: "diamond.png",
 		width: "200px",
@@ -71,7 +74,7 @@ const ranksLogo = [
 		top: "29%",
 		bottom: "48px",
 	},
-	{
+	platinum: {
 		name: "platinum",
 		url: "platinum.png",
 		width: "156px",
@@ -81,7 +84,7 @@ const ranksLogo = [
 		top: "23%",
 		bottom: "30px",
 	},
-	{
+	gold: {
 		name: "gold",
 		url: "gold.png",
 		width: "115px",
@@ -91,7 +94,7 @@ const ranksLogo = [
 		top: "17%",
 		bottom: "16px",
 	},
-	{
+	bronze: {
 		name: "bronze",
 		url: "bronze.png",
 		width: "108px",
@@ -101,7 +104,7 @@ const ranksLogo = [
 		top: "15%",
 		bottom: "18px",
 	},
-];
+};
 const listPartners = [
 	{name: "okvip", url: "okvip.png", width: "200px", height: "96px"},
 	{name: "789bet", url: "789bet.png", width: "200px", height: "96px"},
@@ -109,11 +112,32 @@ const listPartners = [
 	{name: "new88", url: "new88.png", width: "200px", height: "96px"},
 	{name: "jun88", url: "jun88.png", width: "200px", height: "96px"},
 	{name: "hi88", url: "hi88.png", width: "200px", height: "96px"},
-	{name: "okvip", url: "okvip.png", width: "200px", height: "96px"},
-	{name: "789bet", url: "789bet.png", width: "200px", height: "96px"},
-	{name: "mb66", url: "mb66.png", width: "200px", height: "96px"},
-	{name: "new88", url: "new88.png", width: "200px", height: "96px"},
-	{name: "jun88", url: "jun88.png", width: "200px", height: "96px"},
-	{name: "hi88", url: "hi88.png", width: "200px", height: "96px"},
 ];
-export {listMenuHeader, ranksLogo, listPartners};
+const ListMenuMobile = [
+	{
+		name: "Trang chủ",
+		icon: "/images/home.png",
+		area: "w-[58px] h-[30px] ",
+		link: "/",
+	},
+	{
+		name: "Blog",
+		icon: "/images/blog.png",
+		area: "w-[30px] h-[30px] ",
+		link: "/blog",
+	},
+	{
+		name: "Hoạt động",
+		icon: "/images/activity.png",
+		area: "w-9 h-9 ",
+		link: "/hoat-dong",
+	},
+	{
+		name: "Dự án",
+		icon: "/images/project.png",
+		area: "w-[30px] h-[30px] ",
+		link: "/du-an",
+	},
+];
+
+export {listMenuHeader, rankLogo, listPartners, ListMenuMobile};

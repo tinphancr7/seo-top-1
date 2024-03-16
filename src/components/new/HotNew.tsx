@@ -6,8 +6,8 @@ const HotNew = () => {
 	return (
 		<div>
 			<div className="grid grid-cols-12 gap-5">
-				<div className="col-span-8">
-					<div className="w-full h-[582px] relative">
+				<div className="col-span-12 lg:col-span-8">
+					<div className="w-full h-[234px] lg:h-[582px] relative">
 						<Image
 							src="https://images.unsplash.com/photo-1542393545-10f5cde2c810?q=80&w=1965&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
 							className="object-cover"
@@ -15,10 +15,10 @@ const HotNew = () => {
 							alt=""
 						/>
 					</div>
-					<h3 className="font-bold text-[32px] text-white py-3">
+					<h3 className="font-bold text-xl lg:text-[32px] text-white py-2 lg:py-3">
 						Interior Designer and Maude Interiors by Yvonne Designs
 					</h3>
-					<p className="line-clamp-2 text-2xl font-normal text-white">
+					<p className="line-clamp-2 text-base lg:text-2xl font-normal text-white">
 						Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore,
 						suscipit sunt ullam unde eligendi temporibus, repudiandae quos
 						architecto rerum dicta exercitationem ipsum. Adipisci sint voluptas
@@ -33,10 +33,13 @@ const HotNew = () => {
 						unde quo.
 					</p>
 				</div>
-				<div className="col-span-4 flex flex-col gap-4">
+				<div className="grid grid-cols-12 col-span-12 lg:col-span-4 gap-2">
 					{new Array(4).fill(0).map((_, index) => (
-						<div key={index} className="flex  gap-2 ">
-							<div className="w-[302px] h-[165px] relative flex-shrink-0">
+						<div
+							key={index}
+							className="flex col-span-6 lg:col-span-12 flex-col lg:flex-row gap-2 "
+						>
+							<div className="w-full h-[114px] lg:w-[302px] lg:h-[165px] relative flex-shrink-0">
 								<Image
 									src="https://images.unsplash.com/photo-1542393545-10f5cde2c810?q=80&w=1965&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
 									className="object-cover rounded"
@@ -45,10 +48,10 @@ const HotNew = () => {
 								/>
 							</div>
 							<div>
-								<h5 className="text-white font-medium text-xl">
+								<h5 className="text-white font-medium text-sm lg:text-xl">
 									Interior Designer and Maude Interiors by Yvonne Designs
 								</h5>
-								<span className="font-medium text-base text-[#7E7E7E]">
+								<span className="font-medium text-sm lg:text-base text-[#7E7E7E]">
 									Jan 24, 2024
 								</span>
 							</div>

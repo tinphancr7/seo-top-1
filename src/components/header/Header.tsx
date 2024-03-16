@@ -5,10 +5,10 @@ import Image from "next/image";
 
 const Header = () => {
 	return (
-		<div className="bg-blue09 py-12">
+		<div className="bg-blue09 py-6 lg:py-12">
 			<div className="container mx-auto">
-				<div className="flex items-center justify-between">
-					<div className="relative w-[246px] h-[70px]">
+				<div className="flex items-center justify-center lg:justify-between">
+					<div className="relative w-[125px] h-9 lg:w-[246px] lg:h-[70px]">
 						<Image
 							src="/images/logo.png"
 							className="object-cover"
@@ -16,7 +16,7 @@ const Header = () => {
 							alt=""
 						/>
 					</div>
-					<div className="flex items-center gap-5 text-xl font-medium text-white">
+					<div className="md:flex items-center gap-5 text-xl font-medium text-white hidden ">
 						{listMenuHeader.map((item, index) => (
 							<div key={index}>{item.name}</div>
 						))}

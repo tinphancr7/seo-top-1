@@ -1,8 +1,19 @@
+"use client";
 import Card from "@/components/card/Card";
 
 import React, {Fragment, useEffect, useState} from "react";
+// Import Swiper React components
+import {Swiper, SwiperSlide} from "swiper/react";
 
-const ListRank = ({name, order}) => {
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/pagination";
+import {Pagination} from "swiper/modules";
+interface ListRankProps {
+	name: string;
+	order: number;
+}
+const ListRank = ({name, order}: ListRankProps) => {
 	const [orderActive, setOrderActive] = useState(0);
 	useEffect(() => {
 		if (name === "master") {
@@ -14,6 +25,7 @@ const ListRank = ({name, order}) => {
 			}
 			const handleMouseOver = (event) => {
 				const hoveredPos = parseInt(event.currentTarget.dataset.order);
+
 				setOrderActive(hoveredPos);
 
 				for (let i = 0; i < links.length; i++) {
@@ -55,17 +67,44 @@ const ListRank = ({name, order}) => {
 	}, [name]); // Empty dependency array ensures the effect runs only once on mount
 
 	return (
-		<div className="grid grid-cols-5 gap-5">
-			{new Array(5).fill(0).map((item, index) => (
-				<Fragment key={index}>
-					<Card
-						dataOrder={index + order}
-						name={name}
-						orderActive={orderActive}
-					/>
-				</Fragment>
-			))}
-		</div>
+		<>
+			<div className="lg:grid grid-cols-5 gap-5 hidden">
+				{new Array(5).fill(0).map((item, index) => (
+					<Fragment key={index}>
+						<Card
+							dataOrder={index + order}
+							name={name}
+							orderActive={orderActive}
+						/>
+					</Fragment>
+				))}
+			</div>
+			<div className="lg:hidden ">
+				<Swiper
+					slidesPerView={3}
+					spaceBetween={15}
+					autoplay={{
+						delay: 2000,
+						disableOnInteraction: false,
+					}}
+					pagination={{
+						clickable: true,
+					}}
+					modules={[Pagination]}
+					className="mySwiper"
+				>
+					{new Array(5).fill(0).map((item, index) => (
+						<SwiperSlide key={index}>
+							<Card
+								dataOrder={index + order}
+								name={name}
+								orderActive={orderActive}
+							/>
+						</SwiperSlide>
+					))}
+				</Swiper>
+			</div>
+		</>
 	);
 };
 

@@ -7,9 +7,11 @@ interface Heading2Props {
 }
 const Heading2 = ({children, bg, textColor, className}: Heading2Props) => {
 	return (
-		<div className={`flex items-center justify-center gap-5 mb-6 ${className}`}>
+		<div
+			className={`flex items-center justify-center gap-2 lg:gap-5 mb-6 ${className}`}
+		>
 			<div
-				className="w-[482px] h-4"
+				className="w-[140px] lg:w-[482px] h-1 lg:h-4"
 				style={{
 					background: bg,
 
@@ -17,24 +19,22 @@ const Heading2 = ({children, bg, textColor, className}: Heading2Props) => {
 				}}
 			></div>
 			<span
-				className={`font-bold text-4xl uppercase `}
+				className={`font-bold text-base lg:text-4xl uppercase text-nowrap`}
 				style={{
 					color: textColor,
 				}}
 			>
 				{children}
 			</span>
-			<div className="w-[482px] h-4">
-				<div
-					className="w-[482px] h-4"
-					style={{
-						background: bg,
+			<div
+				className="w-[140px] lg:w-[482px] h-1 lg:h-4"
+				style={{
+					background: bg,
 
-						clipPath: "polygon(100% 15%, 0 46%, 100% 86%)",
-						transform: "rotate(180deg)",
-					}}
-				></div>
-			</div>
+					clipPath: "polygon(100% 15%, 0 46%, 100% 86%)",
+					transform: "rotate(180deg)",
+				}}
+			></div>
 		</div>
 	);
 };
