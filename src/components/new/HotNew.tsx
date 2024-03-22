@@ -1,15 +1,27 @@
-import Heading2 from "@/components/heading/Heading2";
+"use client";
+import newApi from "@/apis/new.api";
+import {URL_IMAGE} from "@/constants";
+
+import {useQuery} from "@tanstack/react-query";
 import Image from "next/image";
 import React from "react";
 
 const HotNew = () => {
+	const {data, refetch} = useQuery({
+		queryKey: ["hot-news"],
+		queryFn: () => newApi.getAllHotNews(),
+	});
+	const hotNews = data?.data?.result?.result;
+
 	return (
 		<div>
 			<div className="grid grid-cols-12 gap-5">
 				<div className="col-span-12 lg:col-span-8">
 					<div className="w-full h-[234px] lg:h-[582px] relative">
 						<Image
-							src="https://images.unsplash.com/photo-1542393545-10f5cde2c810?q=80&w=1965&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+							src={
+								hotNews?.length ? `${URL_IMAGE}/${hotNews[0]?.thumbnail}` : ""
+							}
 							className="object-cover"
 							fill
 							alt=""

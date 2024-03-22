@@ -3,9 +3,9 @@ import {Inter} from "next/font/google";
 import "./globals.css";
 import Header from "@/components/header/Header";
 import Footer from "@/components/footer/Footer";
-import Providers from "./providers";
+
 import MenuMobile from "@/components/menuMobile/MenuMobile";
-// import {NextUIProvider} from "@nextui-org/react";
+import Providers from "@/utils/providers";
 
 const inter = Inter({subsets: ["latin"]});
 

@@ -5,20 +5,32 @@ import HotNew from "@/components/new/HotNew";
 import ListNew from "@/components/new/ListNew";
 import ListPartner from "@/components/partner/ListPartner";
 import ListRank from "@/components/rank/ListRank";
+import {Textarea} from "@nextui-org/react";
+import Image from "next/image";
 
 export default function Home() {
 	return (
 		<main className=" w-full overflow-hidden relative ">
-			<div className="show_bg_2 ">
+			<div className="show_bg_2 relative">
 				<div className="lg:py-20 container mx-auto ">
 					<Heading>cao thủ tháng 03/20024</Heading>
 					<ListRank name="master" order={1} />
+				</div>
+				<div className="absolute left-0 top-0 bottom-0 hidden lg:block">
+					<div className="w-8 h-full relative">
+						<Image src="/images/Group153.png" fill alt="" />
+					</div>
+				</div>
+				<div className="absolute right-0 top-0 bottom-0 rotate-180 hidden lg:block">
+					<div className="w-8 h-full relative">
+						<Image src="/images/Group153.png" fill alt="" />
+					</div>
 				</div>
 			</div>
 
 			<div className="bg-blue00">
 				<div className="container mx-auto">
-					<div className=" pb-10 lg:py-20">
+					<div className=" py-10 lg:py-20">
 						<Heading>ĐẠI GIA ĐÌNH SEO</Heading>
 						<Hero />
 					</div>

@@ -139,5 +139,5 @@ const ListMenuMobile = [
 		link: "/du-an",
 	},
 ];
-
-export {listMenuHeader, rankLogo, listPartners, ListMenuMobile};
+const URL_IMAGE = "http://109.123.229.78:9000/kaizen";
+export {listMenuHeader, rankLogo, listPartners, ListMenuMobile, URL_IMAGE};

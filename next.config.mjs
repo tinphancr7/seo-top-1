@@ -7,6 +7,10 @@ const nextConfig = {
 				hostname: "images.unsplash.com",
 				port: "",
 			},
+			{
+				hostname: "109.123.229.78",
+				port: "9000",
+			},
 		],
 	},
 	typescript: {
